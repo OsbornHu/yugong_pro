@@ -151,7 +151,7 @@ public class IncrementRecordApplier extends AbstractRecordApplier {
         List<String> names = Arrays.asList(record.getSchemaName(), record.getTableName());
         TableSqlUnit sqlUnit = insertSqlCache.get(names);
         if (sqlUnit == null) {
-            synchronized (this) {
+            synchronized (names) {
                 sqlUnit = insertSqlCache.get(names);
                 if (sqlUnit == null) { // double-check
                     sqlUnit = new TableSqlUnit();
@@ -225,7 +225,7 @@ public class IncrementRecordApplier extends AbstractRecordApplier {
         List<String> names = Arrays.asList(record.getSchemaName(), record.getTableName());
         TableSqlUnit sqlUnit = updateSqlCache.get(names);
         if (sqlUnit == null) {
-            synchronized (this) {
+            synchronized (names) {
                 sqlUnit = updateSqlCache.get(names);
                 if (sqlUnit == null) { // double-check
                     sqlUnit = new TableSqlUnit();
@@ -291,7 +291,7 @@ public class IncrementRecordApplier extends AbstractRecordApplier {
         List<String> names = Arrays.asList(record.getSchemaName(), record.getTableName());
         TableSqlUnit sqlUnit = deleteSqlCache.get(names);
         if (sqlUnit == null) {
-            synchronized (this) {
+            synchronized (names) {
                 sqlUnit = deleteSqlCache.get(names);
                 if (sqlUnit == null) { // double-check
                     sqlUnit = new TableSqlUnit();

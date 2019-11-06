@@ -10,7 +10,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 全量+增量的applier实现
- *
+ * 
  * @author agapple 2013-9-26 下午4:43:20
  */
 public class AllRecordApplier extends AbstractRecordApplier {

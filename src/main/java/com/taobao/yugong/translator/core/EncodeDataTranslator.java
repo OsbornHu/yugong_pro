@@ -7,7 +7,7 @@ import com.taobao.yugong.translator.AbstractDataTranslator;
 
 /**
  * 处理下编码转化
- *
+ * 
  * @author agapple 2013-9-29 下午3:24:19
  */
 public class EncodeDataTranslator extends AbstractDataTranslator {

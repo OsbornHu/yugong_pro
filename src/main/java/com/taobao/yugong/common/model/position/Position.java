@@ -8,7 +8,7 @@ import com.taobao.yugong.common.utils.YuGongToStringStyle;
 
 /**
  * 事件唯一标示
- *
+ * 
  * @author agapple 2014年2月25日 下午11:38:06
  * @since 1.0.0
  */

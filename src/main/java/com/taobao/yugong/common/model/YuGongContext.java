@@ -1,8 +1,5 @@
 package com.taobao.yugong.common.model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.sql.DataSource;
 
 import com.taobao.yugong.common.db.meta.Table;
@@ -10,48 +7,26 @@ import com.taobao.yugong.common.model.position.Position;
 
 /**
  * yugong数据处理上下文
- *
+ * 
  * @author agapple 2013-9-12 下午5:04:57
  */
 public class YuGongContext {
 
     // 具体每张表的同步
-    private Position              lastPosition;                        // 最后一次同步的position记录
-    private Table                 tableMeta;                           // 对应的meta
-    private boolean               ignoreSchema         = false;        // 同步时是否忽略schema，oracle迁移到mysql可能schema不同，可设置为忽略
+    private Position   lastPosition;                  // 最后一次同步的position记录
+    private Table      tableMeta;                     // 对应的meta
+    private boolean    ignoreSchema         = false;  // 同步时是否忽略schema，oracle迁移到mysql可能schema不同，可设置为忽略
 
     // 全局共享
-    private RunMode               runMode;
-    private int                   onceCrawNum;                         // 每次提取的记录数
-    private int                   tpsLimit             = 0;            // <=0代表不限制
-    private DataSource            sourceDs;                            // 源数据库链接
-    private DataSource            targetDs;                            // 目标数据库链接
-    private boolean               batchApply           = false;
-    private boolean               skipApplierException = false;        // 是否允许跳过applier异常
-    private String                sourceEncoding       = "UTF-8";
-    private String                targetEncoding       = "UTF-8";
-
-    private String                mViewLogType         = "";           // 创建物化视图日志的类型
-
-    private Map<String, String[]> tablepks             = new HashMap(); // 没有主键
-
-    // 实时同步时指定的判断字段
-
-    public Map<String, String[]> getTablepks() {
-        return tablepks;
-    }
-
-    public void setTablepks(Map<String, String[]> tablepks) {
-        this.tablepks = tablepks;
-    }
-
-    public String getmViewLogType() {
-        return mViewLogType;
-    }
-
-    public void setmViewLogType(String mViewLogType) {
-        this.mViewLogType = mViewLogType;
-    }
+    private RunMode    runMode;
+    private int        onceCrawNum;                   // 每次提取的记录数
+    private int        tpsLimit             = 0;      // <=0代表不限制
+    private DataSource sourceDs;                      // 源数据库链接
+    private DataSource targetDs;                      // 目标数据库链接
+    private boolean    batchApply           = false;
+    private boolean    skipApplierException = false;  // 是否允许跳过applier异常
+    private String     sourceEncoding       = "UTF-8";
+    private String     targetEncoding       = "UTF-8";
 
     public Position getLastPosition() {
         return lastPosition;
@@ -161,8 +136,6 @@ public class YuGongContext {
         context.setTpsLimit(tpsLimit);
         context.setIgnoreSchema(ignoreSchema);
         context.setSkipApplierException(skipApplierException);
-        context.setmViewLogType(mViewLogType);
-        context.setTablepks(tablepks);
         return context;
     }
 

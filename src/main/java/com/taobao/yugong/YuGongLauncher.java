@@ -2,6 +2,7 @@ package com.taobao.yugong;
 
 import java.io.FileInputStream;
 
+import com.taobao.yugong.distribute.redis.PoolUtil;
 import com.taobao.yugong.distribute.zookeeper.ZKClient;
 import com.taobao.yugong.distribute.zookeeper.ZKClientListener;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -33,9 +34,10 @@ public class YuGongLauncher {
                 config.load(new FileInputStream(conf));
             }
 
+            //加入zookeeper连接代码begin
             String zkConnStr = config.getString("yugong.zookeeper.connAddr");
             logger.error("zookeeper connect string:"+zkConnStr);
-            //加入zookeeper连接代码begin
+
             CuratorFramework client =
                     CuratorFrameworkFactory.builder()
                             .connectString(zkConnStr)
@@ -48,7 +50,7 @@ public class YuGongLauncher {
             leaderLatch.addListener(zkClientListener);
 
 
-            ZKClient zkClient = new ZKClient(leaderLatch,client);
+            final ZKClient zkClient = new ZKClient(leaderLatch,client);
             try {
                 zkClient.startZKClient();
             } catch (Exception e) {
@@ -56,10 +58,11 @@ public class YuGongLauncher {
                 return;
             }
             logger.info("zk客户端连接成功");
+            PoolUtil.initPool(config);  //初始化redis连接池
             //加入zookeeper连接代码end
 
             while (true) {
-                if(zkClient.hasLeadership()) {
+                if (zkClient.hasLeadership()) {
                     logger.info("## start the YuGong.");
                     final YuGongController controller = new YuGongController(config);
                     controller.start();

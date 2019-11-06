@@ -7,7 +7,7 @@ import org.apache.commons.lang.builder.ToStringStyle;
 
 /**
  * 统一的ToStringStyle
- *
+ * 
  * @author agapple 2010-6-18 上午11:35:27
  */
 public class YuGongToStringStyle extends ToStringStyle {

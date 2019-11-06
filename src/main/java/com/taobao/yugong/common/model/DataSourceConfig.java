@@ -9,7 +9,7 @@ import com.taobao.yugong.common.utils.YuGongToStringStyle;
 
 /**
  * 数据介质源信息描述
- *
+ * 
  * @author agapple 2011-9-2 上午11:28:21
  */
 public class DataSourceConfig implements Serializable {

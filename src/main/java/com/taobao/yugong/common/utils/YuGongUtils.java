@@ -31,6 +31,9 @@ public class YuGongUtils {
 
     /**
      * 返回字段名字的数组
+     * 
+     * @param columns
+     * @return
      */
     public static String[] getColumnNameArray(List<ColumnMeta> columns) {
         if (columns == null || columns.size() == 0) {
@@ -48,6 +51,9 @@ public class YuGongUtils {
 
     /**
      * 根据DataSource判断一下数据库类型
+     * 
+     * @param dataSource
+     * @return
      */
     public static DbType judgeDbType(DataSource dataSource) {
         final JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
@@ -78,7 +84,7 @@ public class YuGongUtils {
      * Convert a column name with underscores to the corresponding class name
      * using "camel case". A name like "customer_number" would match a
      * "CustomerNumber" class name.
-     *
+     * 
      * @param name the column name to be converted
      * @return the name using "camel case"
      */
@@ -89,7 +95,7 @@ public class YuGongUtils {
             result.append(Character.toUpperCase(name.charAt(0)));
             for (int i = 1; i < name.length(); i++) {
                 String s = String.valueOf(name.charAt(i));
-                if ("_".equals(s) || "-".equals(s)) {
+                if (s.equals("_")) {
                     needUpper = true;
                 } else {
                     if (needUpper) {

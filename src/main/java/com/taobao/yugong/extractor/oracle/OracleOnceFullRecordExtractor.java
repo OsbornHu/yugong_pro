@@ -27,7 +27,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 基于oracle的一次性任务
- *
+ * 
  * @author agapple 2013-9-10 下午5:12:33
  * @since 3.0.0
  */
@@ -146,7 +146,6 @@ public class OracleOnceFullRecordExtractor extends AbstractOracleRecordExtractor
                     }
 
                     setStatus(ExtractStatus.TABLE_END);
-                    rs.close();
                     return null;
                 }
             });

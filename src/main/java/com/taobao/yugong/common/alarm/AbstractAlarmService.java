@@ -7,7 +7,7 @@ import com.taobao.yugong.common.lifecycle.AbstractYuGongLifeCycle;
 
 /**
  * 报警服务实现
- *
+ * 
  * @author agapple 2011-11-3 上午11:12:16
  * @version 4.0.0
  */

@@ -24,7 +24,7 @@ import com.taobao.yugong.common.utils.thread.ExecutorTemplate;
 
 /**
  * 根据bill_out_id关联查询bill_out表获取数据
- *
+ * 
  * @author agapple 2014-5-13 下午1:13:18
  */
 public class MidBillOutDetailDataTranslator extends BackTableDataTranslator implements DataTranslator {

@@ -11,19 +11,18 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * 发送邮件进行报警
- *
+ * 
  * @author agapple 2013-9-6 上午11:42:04
  * @since 1.0.0
  */
 public class MailAlarmService extends AbstractAlarmService {
 
-    private static final String TITLE      = "alarm_from_yugong";
+    private static final String TITLE    = "alarm_from_yugong";
     private JavaMailSender      mailSender;
     private String              emailUsername;
     private String              emailPassword;
     private String              emailHost;
-    private int                 stmpPort   = 465;
-    private boolean             sslSupport = true;
+    private int                 stmpPort = 465;
 
     @Override
     public void start() {
@@ -39,10 +38,7 @@ public class MailAlarmService extends AbstractAlarmService {
         pros.put("mail.smtp.port", stmpPort);
         pros.put("mail.smtp.socketFactory.port", stmpPort);
         pros.put("mail.smtp.socketFactory.fallback", false);
-        if (sslSupport) {
-            pros.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        }
-
+        pros.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         mailSender.setJavaMailProperties(pros);
 
         this.mailSender = mailSender;
@@ -95,10 +91,6 @@ public class MailAlarmService extends AbstractAlarmService {
 
     public void setStmpPort(int stmpPort) {
         this.stmpPort = stmpPort;
-    }
-
-    public void setSslSupport(boolean sslSupport) {
-        this.sslSupport = sslSupport;
     }
 
 }

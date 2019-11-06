@@ -2,7 +2,7 @@ package com.taobao.yugong.common.model.position;
 
 /**
  * 增量日志文件的标示
- *
+ * 
  * @author agapple 2012-6-14 下午09:20:07
  */
 public class LogPosition extends Position {

@@ -9,7 +9,7 @@ import com.taobao.yugong.common.utils.YuGongToStringStyle;
 
 /**
  * 增量的record对象
- *
+ * 
  * @author agapple 2013-9-16 下午4:20:25
  */
 public class IncrementRecord extends Record {

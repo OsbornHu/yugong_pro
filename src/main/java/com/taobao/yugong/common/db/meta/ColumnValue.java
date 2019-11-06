@@ -2,7 +2,7 @@ package com.taobao.yugong.common.db.meta;
 
 /**
  * 代表一个具体字段的value
- *
+ * 
  * @author agapple 2013-9-3 下午2:47:33
  * @since 1.0.0
  */

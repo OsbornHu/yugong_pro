@@ -20,7 +20,7 @@ import com.taobao.yugong.common.model.record.Record;
 
 /**
  * 记录一下同步过程中的record数据
- *
+ * 
  * @author agapple 2013-9-23 下午2:13:46
  */
 public class RecordDumper {

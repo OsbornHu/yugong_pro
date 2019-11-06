@@ -10,7 +10,7 @@ import com.taobao.yugong.common.utils.YuGongToStringStyle;
 
 /**
  * 代表一张数据表
- *
+ * 
  * @author agapple 2013-9-3 下午2:51:56
  * @since 3.0.0
  */

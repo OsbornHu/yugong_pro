@@ -14,7 +14,7 @@ import com.taobao.yugong.positioner.RecordPositioner;
 
 /**
  * 支持ALL模式的oracle数据同步
- *
+ * 
  * @author agapple 2013-9-26 下午4:20:49
  */
 public class OracleAllRecordExtractor extends AbstractOracleRecordExtractor {

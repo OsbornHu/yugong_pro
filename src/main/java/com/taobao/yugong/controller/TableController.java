@@ -6,7 +6,7 @@ import java.util.concurrent.Semaphore;
 
 /**
  * 简单利用信号量控制table并发数
- *
+ * 
  * @author agapple 2013-9-23 下午10:48:34
  */
 public class TableController {

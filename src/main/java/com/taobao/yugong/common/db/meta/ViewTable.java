@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * 视图表信息
- *
+ * 
  * @author agapple 2013-9-3 下午3:02:15
  * @since 3.0.0
  */

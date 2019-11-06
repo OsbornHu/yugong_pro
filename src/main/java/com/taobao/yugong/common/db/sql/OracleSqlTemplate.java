@@ -2,7 +2,7 @@ package com.taobao.yugong.common.db.sql;
 
 /**
  * http://en.wikipedia.org/wiki/Merge_(SQL)
- *
+ * 
  * @author agapple 2014年2月25日 下午11:38:06
  * @since 1.0.0
  */

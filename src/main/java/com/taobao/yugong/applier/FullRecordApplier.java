@@ -28,11 +28,11 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 全量同步appiler
- *
+ * 
  * <pre>
  * 1. 行记录同步，目标库存在则更新，没有则插入
  * </pre>
- *
+ * 
  * @author agapple 2013-9-23 下午5:27:02
  */
 public class FullRecordApplier extends AbstractRecordApplier {
@@ -189,7 +189,7 @@ public class FullRecordApplier extends AbstractRecordApplier {
         List<String> names = Arrays.asList(record.getSchemaName(), record.getTableName());
         TableSqlUnit sqlUnit = applierSqlCache.get(names);
         if (sqlUnit == null) {
-            synchronized (this) {
+            synchronized (names) {
                 sqlUnit = applierSqlCache.get(names);
                 if (sqlUnit == null) { // double-check
                     sqlUnit = new TableSqlUnit();

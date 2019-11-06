@@ -30,7 +30,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 支持multi-thread处理
- *
+ * 
  * @author agapple 2013-9-23 下午5:30:50
  */
 public class MultiThreadIncrementRecordApplier extends IncrementRecordApplier {

@@ -4,7 +4,7 @@ import com.taobao.yugong.common.db.meta.ColumnMeta;
 
 /**
  * mysql特定的sql构造
- *
+ * 
  * @author agapple 2013-9-10 下午6:11:16
  * @since 3.0.0
  */

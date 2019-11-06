@@ -19,7 +19,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 记录对比
- *
+ * 
  * @author agapple 2013-9-29 下午2:56:39
  */
 public class RecordDiffer {
@@ -27,7 +27,6 @@ public class RecordDiffer {
     private static final String SEP           = SystemUtils.LINE_SEPARATOR;
     private static String       record_format = null;
     private static final Logger diffLogger    = LoggerFactory.getLogger("check");
-
     static {
         record_format = SEP + "-----------------" + SEP;
         record_format += "- Schema: {0} , Table: {1}" + SEP;

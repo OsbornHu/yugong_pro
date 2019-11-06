@@ -15,7 +15,7 @@ import com.taobao.yugong.common.model.record.Record;
 
 /**
  * 常见的转换工具类
- *
+ * 
  * @author agapple 2016年6月7日 上午12:31:13
  * @since 1.0.3
  */

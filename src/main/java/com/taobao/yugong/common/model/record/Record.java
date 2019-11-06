@@ -11,7 +11,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 代表一条记录
- *
+ * 
  * @author agapple 2013-9-3 下午2:50:21
  * @since 3.0.0
  */
@@ -87,6 +87,9 @@ public class Record {
 
     /**
      * 根据列名查找对应的字段信息(包括主键中的字段)
+     * 
+     * @param columnName
+     * @return
      */
     public ColumnValue getColumnByName(String columnName) {
         return getColumnByName(columnName, false);
@@ -94,6 +97,9 @@ public class Record {
 
     /**
      * 根据列名查找对应的字段信息(包括主键中的字段)
+     * 
+     * @param columnName
+     * @return
      */
     public ColumnValue getColumnByName(String columnName, boolean returnNullNotExist) {
         for (ColumnValue column : columns) {
@@ -117,6 +123,9 @@ public class Record {
 
     /**
      * 根据列名删除对应的字段信息(包括主键中的字段)
+     * 
+     * @param columnName
+     * @return
      */
     public ColumnValue removeColumnByName(String columnName) {
         return removeColumnByName(columnName, false);
@@ -124,6 +133,9 @@ public class Record {
 
     /**
      * 根据列名删除对应的字段信息(包括主键中的字段)
+     * 
+     * @param columnName
+     * @return
      */
     public ColumnValue removeColumnByName(String columnName, boolean returnNullNotExist) {
         ColumnValue remove = null;

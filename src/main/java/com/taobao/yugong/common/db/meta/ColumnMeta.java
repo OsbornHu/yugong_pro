@@ -7,7 +7,7 @@ import com.taobao.yugong.common.utils.YuGongToStringStyle;
 
 /**
  * 代表一个字段的信息
- *
+ * 
  * @author agapple 2013-9-3 下午2:46:32
  * @since 3.0.0
  */

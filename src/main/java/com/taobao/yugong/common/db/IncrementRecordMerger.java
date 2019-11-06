@@ -14,19 +14,22 @@ import com.taobao.yugong.common.model.record.IncrementRecord;
 /**
  * <pre>
  * pk相同的多条变更数据合并后的结果是：
- * 1, I
- * 2, U
- * 3, D
+ * 1, I 
+ * 2, U 
+ * 3, D 
  * 如果有一条I，多条U，merge成I;
  * 如果有多条U，取最晚的那条;
  * </pre>
- *
+ * 
  * @author agapple 2012-10-31 下午05:23:40
  */
 public class IncrementRecordMerger {
 
     /**
      * 将一批数据进行根据table+主键信息进行合并，保证一个表的一个pk记录只有一条结果
+     * 
+     * @param records
+     * @return
      */
     public static List<IncrementRecord> merge(List<IncrementRecord> records) {
         Map<RowKey, IncrementRecord> result = new LinkedHashMap<RowKey, IncrementRecord>();
@@ -88,9 +91,9 @@ public class IncrementRecordMerger {
                 IncrementRecord mergeRecord = replaceColumnValue(record, oldrecord);
                 result.put(rowKey, mergeRecord);
             } else if (oldrecord.getOpType() == IncrementOpType.U) {// 可能存在
-                // 1->2
-                // ,
-                // 2update的问题
+                                                                    // 1->2
+                                                                    // ,
+                                                                    // 2update的问题
 
                 // 如果上一条变更是update的，把上一条存在而这一条不存在的数据拷贝到这一条中
                 IncrementRecord mergeRecord = replaceColumnValue(record, oldrecord);
@@ -110,6 +113,10 @@ public class IncrementRecordMerger {
 
     /**
      * 把old中的值存在而new中不存在的值合并到new中,并且把old中的变更前的主键保存到new中的变更前的主键.
+     * 
+     * @param newrecord
+     * @param oldrecord
+     * @return
      */
     private static IncrementRecord replaceColumnValue(IncrementRecord newrecord, IncrementRecord oldrecord) {
         List<ColumnValue> newColumns = newrecord.getColumns();

@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 统计每个批次的运行信息
- *
+ * 
  * @author agapple 2014年2月25日 下午11:38:06
  * @since 1.0.0
  */

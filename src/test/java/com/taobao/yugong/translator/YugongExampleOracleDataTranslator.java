@@ -11,7 +11,7 @@ import com.taobao.yugong.common.model.record.Record;
 
 /**
  * 一个迁移的例子，涵盖一些基本转换操作
- *
+ * 
  * <pre>
  * 例子包含特性：
  * 1. schema/table名不同. oracle中为yugong_example_oracle，mysql中为test.yugong_example_mysql
@@ -22,37 +22,37 @@ import com.taobao.yugong.common.model.record.Record;
  * 6. 目标库多了一个字段. mysql中多了一个gmt_move字段，(简单的用迁移时的当前时间进行填充)
  * 
  * 测试的表结构：
- * // oracle表
+ * // oracle表 
  * create table yugong_example_oracle
- * (
+ * (   
  *     id NUMBER(11)  ,
  *     name varchar2(32) ,
  *     alias_name  char(32) default ' ' not null,
  *     amount number(11,2),
- *     score  number(20),
+ *     score  number(20), 
  *     text_b blob,
  *     text_c clob,
  *     gmt_create date not null,
  *     gmt_modified date not null,
- *     CONSTRAINT yugong_example_oracle_pk_id  PRIMARY   KEY (id)
+ *     CONSTRAINT yugong_example_oracle_pk_id  PRIMARY   KEY (id) 
  * );
  * 
  * // mysql表
  * create table test.yugong_example_mysql
- * (
+ * (   
  *     id bigint(20) unsigned auto_increment,
  *     display_name varchar(128) ,
  *     amount varchar(32),
- *     score bigint(20) unsigned ,
+ *     score bigint(20) unsigned , 
  *     text_b blob,
  *     text_c text,
  *     gmt_create timestamp not null,
  *     gmt_modified timestamp not null,
  *     gmt_move timestamp not null,
- *     CONSTRAINT yugong_example_mysql_pk_id  PRIMARY KEY (id)
+ *     CONSTRAINT yugong_example_mysql_pk_id  PRIMARY KEY (id) 
  * );
  * </pre>
- *
+ * 
  * @author agapple 2013-10-10 下午3:28:33
  */
 public class YugongExampleOracleDataTranslator extends AbstractDataTranslator implements DataTranslator {

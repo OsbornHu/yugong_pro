@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 基本实现
- *
+ * 
  * @author agapple 2014年2月25日 下午11:38:06
  * @since 1.0.0
  */

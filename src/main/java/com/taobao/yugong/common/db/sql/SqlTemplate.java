@@ -6,7 +6,7 @@ import com.taobao.yugong.common.db.meta.ColumnMeta;
 
 /**
  * sql构造
- *
+ * 
  * @author agapple 2013-9-10 下午6:10:10
  * @since 1.0.0
  */

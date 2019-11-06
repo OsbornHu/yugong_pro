@@ -51,7 +51,7 @@ pidfile=$base/bin/yugong.pid
 
 if [ -f $pidfile ] ; then
 	pid=`cat $pidfile`
-	gpid=`search_pid "appName=yugong" "$pid"`
+	gpid=`get_pid "appName=yugong" "$pid"`
     if [ "$gpid" == "" ] ; then
     	`rm $pidfile`
     else

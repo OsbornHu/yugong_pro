@@ -17,13 +17,17 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 允许业务进行回表查询
- *
+ * 
  * @author agapple 2013-9-12 下午5:38:07
  */
 public abstract class BackTableDataTranslator extends AbstractDataTranslator implements DataTranslator {
 
     /**
      * 提供源数据库和对应的record
+     * 
+     * @param sourceDs
+     * @param record
+     * @return
      */
     public abstract boolean translator(DataSource sourceDs, Record record);
 

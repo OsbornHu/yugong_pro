@@ -10,7 +10,7 @@ import com.taobao.yugong.translator.AbstractDataTranslator;
 
 /**
  * 要忽略oracle基于mlog增量的几种类型
- *
+ * 
  * @author agapple 2013-9-27 下午10:57:49
  */
 public class OracleIncreamentDataTranslator extends AbstractDataTranslator {

@@ -6,13 +6,13 @@ import com.taobao.yugong.common.db.meta.ColumnValue;
 
 /**
  * oracle的数据记录，带着rowId唯一标示
- *
+ * 
  * @author agapple 2013-9-16 下午4:11:05
  */
 public class OracleIncrementRecord extends IncrementRecord {
 
-    private ColumnValue rowId;
-    private DiscardType discardType = DiscardType.NONE;
+    private ColumnValue       rowId;
+    private DiscardType       discardType = DiscardType.NONE;
 
     public OracleIncrementRecord(){
         super();
@@ -49,17 +49,11 @@ public class OracleIncrementRecord extends IncrementRecord {
     }
 
     public static enum DiscardType {
-        /**
-         * 存在delete，丢弃I/U
-         */
+        /** 存在delete，丢弃I/U */
         DELTE_AFTER_IU,
-        /**
-         * 存在I/U，丢弃delete
-         */
+        /** 存在I/U，丢弃delete */
         IU_AFTER_DELETE,
-        /**
-         * 不丢弃
-         */
+        /** 不丢弃 */
         NONE;
 
         public boolean isDiscard() {

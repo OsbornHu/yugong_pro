@@ -13,13 +13,19 @@ public abstract class AbstractOracleRecordExtractor extends AbstractRecordExtrac
 
     /**
      * 从oracle的resultset中得到value
-     *
+     * 
      * <pre>
-     * 1. 对于DATE类型特殊处理成TIMESTAMP类型，否则复制过去会丢掉时间部分
+     * 1. 对于DATE类型特殊处理成TIMESTAMP类型，否则复制过去会丢掉时间部分 
      * 2.  如果为字符串类型，并且需要进行转码，那么进行编码转换。
      * </pre>
+     * 
+     * @param mrs
+     * @param params
+     * @param col
+     * @return
+     * @throws SQLException
      */
-    public ColumnValue getColumnValue(ResultSet rs, String encoding, ColumnMeta col) throws SQLException {
+    protected ColumnValue getColumnValue(ResultSet rs, String encoding, ColumnMeta col) throws SQLException {
         Object value = null;
         if (col.getType() == Types.DATE) {
             value = rs.getTimestamp(col.getName());

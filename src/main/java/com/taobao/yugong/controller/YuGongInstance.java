@@ -43,7 +43,7 @@ import com.taobao.yugong.translator.core.OracleIncreamentDataTranslator;
 
 /**
  * 代表一个同步迁移任务
- *
+ * 
  * @author agapple 2013-9-17 下午3:21:01
  */
 public class YuGongInstance extends AbstractYuGongLifeCycle {
@@ -347,6 +347,8 @@ public class YuGongInstance extends AbstractYuGongLifeCycle {
 
     /**
      * 等待instance处理完成
+     * 
+     * @throws InterruptedException
      */
     public void waitForDone() throws InterruptedException, YuGongException {
         mutex.await();

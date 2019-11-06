@@ -16,7 +16,7 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 支持增量数据的记录
- *
+ * 
  * @author agapple 2013-11-21 上午10:26:33
  */
 public class OracleRecRecordExtractor extends AbstractOracleRecordExtractor {
@@ -67,15 +67,8 @@ public class OracleRecRecordExtractor extends AbstractOracleRecordExtractor {
         // 支持不分表
         if (StringUtils.isBlank(extKey)) {
             // 只处理主键时,可以不带上including new values,可以减少非主键变更时的一条mlog记录
-            if ("ROWID".equals(context.getmViewLogType())) {
-                createMlogSql = MessageFormat.format(CREATE_MLOG_FORMAT, new Object[] { schemaName, tableName,
-                        "  rowid, sequence(" + StringUtils.join(context.getTablepks().get(tableName), ",") + ")" });// 改为使用rowid
-                // +判断字段
-            } else {
-                createMlogSql = MessageFormat.format(CREATE_MLOG_FORMAT, new Object[] { schemaName, tableName,
-                        " primary key, sequence" });
-            }
-
+            createMlogSql = MessageFormat.format(CREATE_MLOG_FORMAT, new Object[] { schemaName, tableName,
+                    " primary key, sequence" });
         } else {
             createMlogSql = MessageFormat.format(CREATE_MLOG_FORMAT, new Object[] { schemaName, tableName,
                     "sequence (" + extKey + ") including new values" });

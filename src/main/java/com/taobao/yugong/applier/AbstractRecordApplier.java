@@ -107,6 +107,9 @@ public abstract class AbstractRecordApplier extends AbstractYuGongLifeCycle impl
 
     /**
      * 获取主键字段信息，从Table元数据中获取。因为物化视图由with primary 改为with (shardkey)
+     * 
+     * @param record
+     * @return
      */
     protected String[] getPrimaryNames(Table tableMeta) {
         String[] result = new String[tableMeta.getPrimaryKeys().size()];

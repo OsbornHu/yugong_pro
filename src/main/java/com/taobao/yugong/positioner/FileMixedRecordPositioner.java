@@ -20,13 +20,13 @@ import com.taobao.yugong.exception.YuGongException;
 
 /**
  * 基于文件刷新的position实现
- *
+ * 
  * <pre>
  * 策略：
  * 1. 先写内存，然后定时刷新数据到File
  * 2. 数据采取overwrite模式(只保留最后一次)
  * </pre>
- *
+ * 
  * @author agapple 2013-9-22 下午3:37:13
  */
 public class FileMixedRecordPositioner extends MemoryRecordPositioner implements RecordPositioner {

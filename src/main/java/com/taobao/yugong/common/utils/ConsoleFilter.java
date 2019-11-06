@@ -9,7 +9,6 @@ import ch.qos.logback.core.spi.FilterReply;
 public class ConsoleFilter extends Filter<ILoggingEvent> {
 
     private static boolean isEclipse = false;
-
     static {
         // 脚本启动时,一定会带上appName
         String appname = System.getProperty("appName");

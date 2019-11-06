@@ -7,7 +7,7 @@ import com.taobao.yugong.common.model.ProgressStatus;
 
 /**
  * 数据库增量或者全量的中间状态值
- *
+ * 
  * @author agapple 2013-9-22 下午3:10:18
  */
 public class IdPosition extends Position {
