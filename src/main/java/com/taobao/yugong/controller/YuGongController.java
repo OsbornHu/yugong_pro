@@ -483,6 +483,7 @@ public class YuGongController extends AbstractYuGongLifeCycle {
         } else {
             properties.setProperty("maxActive", "200");
         }
+
         if (dbType.isMysql()) {// mysql的编码直接交给驱动去做
             properties.setProperty("characterEncoding", encode);
         }
